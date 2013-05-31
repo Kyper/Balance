@@ -1,36 +1,25 @@
+// Balance.cpp: определяет точку входа для консольного приложения.
+//
+
 #include "stdafx.h"
 #include "join.h"
+#include "Saver.h"
 
-class Balance
+using namespace std;
+
+
+int _tmain(int argc, _TCHAR* argv[])
 {
-public:
-  Balance();
+	setlocale(0, "Russian");
+	Balance myBalance;
+	int t,m,n;
 
-	Balance(int, int, int);
-	void setBallance(static int);
-	int getBallance();
-	void setPrirost(int);
-	int getPrirost();
-	void setSaver1(int);
-	int getSaver1();
-	void setSaver2(int);
-	int getSaver2();
-	void setVuvod(int);
-	int getVuvod();
-	void setProcent(const int);
-	const int getProcent(); 
+	cout<<"Введите свой баланс: ";
+	cin>>t;
 
-	void displayMessage();
-
-
-
-
-
-private:
-	int Ballance;
-	int Prirost;
-	int Saver1;
-	int Saver2;
-	int Vuvod;
-	const int Procent;
-};
+	myBalance.setBallance(t);
+	myBalance.displayMessage();
+	
+	_getch();
+	return 0;
+}
